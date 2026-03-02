@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arduino Basics | DevCircuit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>DevCircuit</h1>
+  <nav>
+    <a href="../../index.html">Home</a>
+    <a href="../../about.html">About</a>
+  </nav>
+</header>
+
+<main>
+  <article class="content">
+    <h2>Arduino Basics: What You Need to Know</h2>
+    <p class="date">March 1, 2026</p>
+
+    <h3>What is Arduino?</h3>
+    <p>
+      Arduino is an open-source electronics platform built around
+      microcontrollers that allow you to control hardware using code.
+    </p>
+
+    <h3>Why Arduino is Good for Beginners</h3>
+    <ul>
+      <li>Low cost</li>
+      <li>Huge community support</li>
+      <li>Simple C/C++ based programming</li>
+    </ul>
+
+    <h3>Your First Program (Blink)</h3>
+
+<pre><code>void setup() {
+  pinMode(13, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(13, HIGH);
+  delay(1000);
+  digitalWrite(13, LOW);
+  delay(1000);
+}</code></pre>
+
+    <h3>Things You Must Know</h3>
+    <ul>
+      <li>Always use correct resistor values with LEDs</li>
+      <li>Double-check wiring before powering</li>
+      <li>Understand voltage limits (5V vs 3.3V)</li>
+      <li>Read datasheets</li>
+    </ul>
+
+    <p>
+      Arduino is a gateway to embedded systems, IoT, and hardware programming.
+      Master this, and you unlock a lot more.
+    </p>
+
+  </article>
+</main>
+
+<footer>
+  <p>© 2026 DevCircuit. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
