@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ultrasonic Sensor with Arduino | DevCircuit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 50px 20px;
+    }
+
+    h1 {
+      color: #58a6ff;
+      margin-bottom: 10px;
+      font-size: 2.5rem;
+    }
+
+    .post-meta {
+      color: #8b949e;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #58a6ff;
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    code {
+      background: #161b22;
+      padding: 3px 6px;
+      border-radius: 4px;
+      color: #58a6ff;
+    }
+
+    pre {
+      background: #161b22;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin-bottom: 25px;
+    }
+
+    a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 10px 18px;
+      background: #1f6feb;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .back-btn:hover {
+      background: #58a6ff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>Post 2: Ultrasonic Sensor with Arduino</h1>
+    <div class="post-meta">Published by TheTechGuy | Dev Circuit</div>
+
+    <p>
+      The ultrasonic sensor is one of the most useful components in beginner and intermediate Arduino projects.
+      It allows you to measure distance using sound waves.
+    </p>
+
+    <h2>🔹 What is an Ultrasonic Sensor?</h2>
+
+    <p>
+      The most common model is the <code>HC-SR04</code>.
+      It sends out ultrasonic sound waves and measures the time it takes for the echo to return.
+    </p>
+
+    <p>
+      Using that time, we calculate distance.
+    </p>
+
+    <h2>🔹 Pins of HC-SR04</h2>
+
+    <p>
+      The sensor has 4 pins:
+    </p>
+
+    <ul>
+      <li><strong>VCC</strong> – 5V power</li>
+      <li><strong>Trig</strong> – Trigger pin (send signal)</li>
+      <li><strong>Echo</strong> – Receive reflected signal</li>
+      <li><strong>GND</strong> – Ground</li>
+    </ul>
+
+    <h2>🔹 Basic Wiring</h2>
+
+    <p>
+      Example connection with Arduino UNO:
+    </p>
+
+    <pre>
+VCC  → 5V
+GND  → GND
+Trig → Pin 9
+Echo → Pin 10
+    </pre>
+
+    <h2>🔹 Basic Arduino Code</h2>
+
+    <pre>
+const int trigPin = 9;
+const int echoPin = 10;
+
+long duration;
+int distance;
+
+void setup() {
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+
+  duration = pulseIn(echoPin, HIGH);
+
+  distance = duration * 0.034 / 2;
+
+  Serial.print("Distance: ");
+  Serial.print(distance);
+  Serial.println(" cm");
+
+  delay(500);
+}
+    </pre>
+
+    <h2>🔹 Important Things To Know</h2>
+
+    <p>
+      • Accurate range is about 2cm to 400cm  
+      • Works best on flat surfaces  
+      • Soft materials absorb sound  
+      • Avoid placing objects at sharp angles  
+    </p>
+
+    <h2>🔹 Common Beginner Mistakes</h2>
+
+    <p>
+      • Forgetting to divide by 2  
+      • Not adding delay  
+      • Wrong wiring of Echo/Trig  
+      • Not using proper power supply  
+    </p>
+
+    <h2>🔹 Project Ideas</h2>
+
+    <p>
+      • Distance meter  
+      • Obstacle avoiding robot  
+      • Smart parking system  
+      • Water level detection  
+    </p>
+
+    <a href="../index.html" class="back-btn">← Back to Blog</a>
+
+  </div>
+
+</body>
+</html>
