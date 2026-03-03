@@ -4,10 +4,8 @@
   <meta charset="UTF-8">
   <title>DevCircuit Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Google Font -->
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -23,19 +21,8 @@
 </header>
 
 <main>
-  <section class="posts">
-
-    <article class="card">
-      <h2>
-        <a href="posts/post1/">Arduino Basics: What You Need to Know</a>
-      </h2>
-      <p class="date">March 1, 2026</p>
-      <p>
-        A complete beginner guide to understanding Arduino boards,
-        essential components, and your first working program.
-      </p>
-    </article>
-
+  <section class="posts" id="posts-container">
+    <!-- Posts will load here automatically -->
   </section>
 </main>
 
@@ -43,6 +30,39 @@
   <p>© 2026 DevCircuit. All rights reserved.</p>
 </footer>
 
-</body>
+<script>
+  const posts = [
+    {
+      folder: "post1",
+      title: "Arduino Basics: What You Need to Know",
+      date: "March 1, 2026",
+      description: "A complete beginner guide to understanding Arduino boards, essential components, and your first working program."
+    },
+    {
+      folder: "post2",
+      title: "Ultrasonic Sensor with Arduino",
+      date: "March 3, 2026",
+      description: "Learn how the HC-SR04 ultrasonic sensor works, wiring, and measuring distance using Arduino."
+    }
+  ];
 
+  const container = document.getElementById("posts-container");
+
+  posts.reverse().forEach(post => {
+    const article = document.createElement("article");
+    article.className = "card";
+
+    article.innerHTML = `
+      <h2>
+        <a href="posts/${post.folder}/">${post.title}</a>
+      </h2>
+      <p class="date">${post.date}</p>
+      <p>${post.description}</p>
+    `;
+
+    container.appendChild(article);
+  });
+</script>
+
+</body>
 </html>
