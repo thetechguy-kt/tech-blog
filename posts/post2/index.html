@@ -14,19 +14,18 @@
       color: #c9d1d9;
       margin: 0;
       padding: 0;
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
     .container {
       max-width: 900px;
       margin: auto;
-      padding: 50px 20px;
+      padding: 40px 20px;
     }
 
     h1 {
       color: #58a6ff;
       margin-bottom: 10px;
-      font-size: 2.5rem;
     }
 
     .post-meta {
@@ -36,8 +35,7 @@
 
     h2 {
       color: #58a6ff;
-      margin-top: 40px;
-      margin-bottom: 15px;
+      margin-top: 30px;
     }
 
     p {
@@ -46,17 +44,16 @@
 
     code {
       background: #161b22;
-      padding: 3px 6px;
+      padding: 4px 6px;
       border-radius: 4px;
       color: #58a6ff;
     }
 
     pre {
       background: #161b22;
-      padding: 20px;
+      padding: 15px;
       border-radius: 8px;
       overflow-x: auto;
-      margin-bottom: 25px;
     }
 
     a {
@@ -70,13 +67,12 @@
 
     .back-btn {
       display: inline-block;
-      margin-top: 40px;
-      padding: 10px 18px;
+      margin-top: 30px;
+      padding: 8px 14px;
       background: #1f6feb;
       color: white;
-      border-radius: 6px;
+      border-radius: 5px;
       text-decoration: none;
-      font-weight: 500;
     }
 
     .back-btn:hover {
@@ -88,44 +84,32 @@
 
   <div class="container">
 
-    <h1>Post 2: Ultrasonic Sensor with Arduino</h1>
+    <h1>Ultrasonic Sensor with Arduino</h1>
     <div class="post-meta">Published by TheTechGuy | Dev Circuit</div>
 
     <p>
-      The ultrasonic sensor is one of the most useful components in beginner and intermediate Arduino projects.
-      It allows you to measure distance using sound waves.
+      The ultrasonic sensor is one of the most commonly used distance measuring components in Arduino projects.
+      It works using sound waves instead of light.
     </p>
 
-    <h2>🔹 What is an Ultrasonic Sensor?</h2>
-
+    <h2>What is the HC-SR04?</h2>
     <p>
-      The most common model is the <code>HC-SR04</code>.
-      It sends out ultrasonic sound waves and measures the time it takes for the echo to return.
+      The HC-SR04 ultrasonic sensor sends out high-frequency sound waves and listens for the echo.
+      By measuring the time it takes for the sound to return, we can calculate the distance.
     </p>
 
+    <h2>Sensor Pins</h2>
     <p>
-      Using that time, we calculate distance.
+      The module has 4 pins:
     </p>
-
-    <h2>🔹 Pins of HC-SR04</h2>
-
     <p>
-      The sensor has 4 pins:
+      • VCC → 5V  
+      • GND → Ground  
+      • Trig → Trigger signal  
+      • Echo → Receives reflected signal  
     </p>
 
-    <ul>
-      <li><strong>VCC</strong> – 5V power</li>
-      <li><strong>Trig</strong> – Trigger pin (send signal)</li>
-      <li><strong>Echo</strong> – Receive reflected signal</li>
-      <li><strong>GND</strong> – Ground</li>
-    </ul>
-
-    <h2>🔹 Basic Wiring</h2>
-
-    <p>
-      Example connection with Arduino UNO:
-    </p>
-
+    <h2>Basic Wiring</h2>
     <pre>
 VCC  → 5V
 GND  → GND
@@ -133,8 +117,7 @@ Trig → Pin 9
 Echo → Pin 10
     </pre>
 
-    <h2>🔹 Basic Arduino Code</h2>
-
+    <h2>Basic Arduino Code</h2>
     <pre>
 const int trigPin = 9;
 const int echoPin = 10;
@@ -169,31 +152,20 @@ void loop() {
 }
     </pre>
 
-    <h2>🔹 Important Things To Know</h2>
-
+    <h2>Important Things to Know</h2>
     <p>
-      • Accurate range is about 2cm to 400cm  
-      • Works best on flat surfaces  
+      • Accurate range is between 2cm and 400cm  
+      • Works best on flat solid surfaces  
       • Soft materials absorb sound  
-      • Avoid placing objects at sharp angles  
+      • Always divide by 2 in the distance formula  
     </p>
 
-    <h2>🔹 Common Beginner Mistakes</h2>
-
+    <h2>Project Ideas</h2>
     <p>
-      • Forgetting to divide by 2  
-      • Not adding delay  
-      • Wrong wiring of Echo/Trig  
-      • Not using proper power supply  
-    </p>
-
-    <h2>🔹 Project Ideas</h2>
-
-    <p>
-      • Distance meter  
       • Obstacle avoiding robot  
+      • Distance meter  
       • Smart parking system  
-      • Water level detection  
+      • Water tank level indicator  
     </p>
 
     <a href="../index.html" class="back-btn">← Back to Blog</a>
