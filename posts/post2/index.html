@@ -4,101 +4,39 @@
   <meta charset="UTF-8">
   <title>Ultrasonic Sensor with Arduino | DevCircuit</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #0d1117;
-      color: #c9d1d9;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    h1 {
-      color: #58a6ff;
-      margin-bottom: 10px;
-    }
-
-    .post-meta {
-      color: #8b949e;
-      margin-bottom: 30px;
-    }
-
-    h2 {
-      color: #58a6ff;
-      margin-top: 30px;
-    }
-
-    p {
-      margin-bottom: 15px;
-    }
-
-    code {
-      background: #161b22;
-      padding: 4px 6px;
-      border-radius: 4px;
-      color: #58a6ff;
-    }
-
-    pre {
-      background: #161b22;
-      padding: 15px;
-      border-radius: 8px;
-      overflow-x: auto;
-    }
-
-    a {
-      color: #58a6ff;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .back-btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 8px 14px;
-      background: #1f6feb;
-      color: white;
-      border-radius: 5px;
-      text-decoration: none;
-    }
-
-    .back-btn:hover {
-      background: #58a6ff;
-    }
-  </style>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
 
-  <div class="container">
+<header>
+  <h1>DevCircuit</h1>
+  <nav>
+    <a href="../../index.html">Home</a>
+    <a href="../../about.html">About</a>
+  </nav>
+</header>
 
-    <h1>Ultrasonic Sensor with Arduino</h1>
-    <div class="post-meta">Published by TheTechGuy | Dev Circuit</div>
+<main>
+  <article class="content">
+    <h2>Ultrasonic Sensor with Arduino</h2>
+    <p class="date">March 3, 2026</p>
 
+    <h3>Ultrasonic Sensor Use-Case</h3>
     <p>
       The ultrasonic sensor is one of the most commonly used distance measuring components in Arduino projects.
       It works using sound waves instead of light.
     </p>
 
-    <h2>What is the HC-SR04?</h2>
+    <h3>What is the HC-SR04?</h3>
     <p>
       The HC-SR04 ultrasonic sensor sends out high-frequency sound waves and listens for the echo.
       By measuring the time it takes for the sound to return, we can calculate the distance.
     </p>
 
-    <h2>Sensor Pins</h2>
+    <h3>Sensor Pins</h3>
     <p>
       The module has 4 pins:
     </p>
@@ -109,7 +47,7 @@
       • Echo → Receives reflected signal  
     </p>
 
-    <h2>Basic Wiring</h2>
+    <h3>Basic Wiring</h3>
     <pre>
 VCC  → 5V
 GND  → GND
@@ -117,7 +55,7 @@ Trig → Pin 9
 Echo → Pin 10
     </pre>
 
-    <h2>Basic Arduino Code</h2>
+    <h3>Basic Arduino Code</h3>
     <pre>
 const int trigPin = 9;
 const int echoPin = 10;
@@ -152,7 +90,7 @@ void loop() {
 }
     </pre>
 
-    <h2>Important Things to Know</h2>
+    <h3>Important Things to Know</h3>
     <p>
       • Accurate range is between 2cm and 400cm  
       • Works best on flat solid surfaces  
@@ -160,7 +98,7 @@ void loop() {
       • Always divide by 2 in the distance formula  
     </p>
 
-    <h2>Project Ideas</h2>
+    <h3>Project Ideas</h3>
     <p>
       • Obstacle avoiding robot  
       • Distance meter  
@@ -168,9 +106,12 @@ void loop() {
       • Water tank level indicator  
     </p>
 
-    <a href="../index.html" class="back-btn">← Back to Blog</a>
+  </article>
+</main>
 
-  </div>
+<footer>
+  <p>© 2026 DevCircuit. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
